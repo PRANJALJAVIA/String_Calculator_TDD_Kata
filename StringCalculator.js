@@ -4,10 +4,14 @@ class StringCalculator {
 
         let answer = 0;
         
-        let num_array = numbers.split(',');
+        let num_array = numbers.split(/[\n,]/);
         
         for(let i=0 ; i<num_array.length ; i++){
-            answer += parseInt(num_array[i]);
+            let temp = parseInt(num_array[i]);
+            
+            if (!isNaN(temp)) {
+                answer += temp;
+            }
         }
 
         return answer;

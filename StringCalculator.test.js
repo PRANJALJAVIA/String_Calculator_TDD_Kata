@@ -21,6 +21,8 @@ describe('StringCalculator', ()=> {
         assert.strictEqual(calculator.add("2,3,4"), 9);
     });
 
-    
+    it('should handle newlines between numbers as well as commas', ()=> {
+        assert.strictEqual(calculator.add("1\n,2,3\n"), 6);
+    });
 
 });
