@@ -34,12 +34,12 @@ describe('StringCalculator', ()=> {
         try {
             calculator.add("-12,-5,8");
         } catch (e) {
-            assert.strictEqual(e.message, 'Negatives not allowed: -12,-5');
+            assert.strictEqual(e.message, 'Negative numbers not allowed: -12,-5');
         }
         try {
             calculator.add("//|\n-2|-3|5");
         } catch (e) {
-            assert.strictEqual(e.message, 'Negatives not allowed: -2,-3');
+            assert.strictEqual(e.message, 'Negative numbers not allowed: -2,-3');
         }
     });
 });
