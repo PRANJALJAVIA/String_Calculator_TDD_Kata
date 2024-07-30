@@ -8,3 +8,4 @@ The `StringCalculator` can be able to:
 2. **add method** can handle new lines between numbers ("1\n2,3" returns 6)
 3. **add method** can support different delimiters
 3. Calling **add method** with a negative number will throw an exception: "negative numbers not allowed <negative_number>".
+   If there are multiple negative numbers, than **add method** can print exception message and comma seperated all negative values.
