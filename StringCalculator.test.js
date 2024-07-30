@@ -25,4 +25,8 @@ describe('StringCalculator', ()=> {
         assert.strictEqual(calculator.add("1\n,2,3\n"), 6);
     });
 
+    it('should handle different delimiters', ()=> {
+        assert.strictEqual(calculator.add("//;\n1;2"), 3);
+    });
+
 });
