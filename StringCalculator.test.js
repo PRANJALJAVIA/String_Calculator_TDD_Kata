@@ -13,4 +13,8 @@ describe('StringCalculator', ()=> {
         assert.strictEqual(calculator.add(""), 0);
     });
 
+    it('should return number itself for single integer', ()=> {
+        assert.strictEqual(calculator.add("2"), 2);
+    });
+
 });
