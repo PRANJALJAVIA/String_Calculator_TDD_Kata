@@ -17,4 +17,10 @@ describe('StringCalculator', ()=> {
         assert.strictEqual(calculator.add("2"), 2);
     });
 
+    it('should return sum of comma seperated numbers', ()=> {
+        assert.strictEqual(calculator.add("2,3,4"), 9);
+    });
+
+    
+
 });

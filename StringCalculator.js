@@ -3,8 +3,12 @@ class StringCalculator {
         if (!numbers) return 0;
 
         let answer = 0;
-
-        answer += parseInt(numbers);
+        
+        let num_array = numbers.split(',');
+        
+        for(let i=0 ; i<num_array.length ; i++){
+            answer += parseInt(num_array[i]);
+        }
 
         return answer;
     }
