@@ -27,6 +27,19 @@ describe('StringCalculator', ()=> {
 
     it('should handle different delimiters', ()=> {
         assert.strictEqual(calculator.add("//;\n1;2"), 3);
+        assert.strictEqual(calculator.add("//|\n1|2"), 3);
     });
 
+    it('should handle negative numbers, negative numbers are not allowed', () => {
+        try {
+            calculator.add("-12,-5,8");
+        } catch (e) {
+            assert.strictEqual(e.message, 'Negatives not allowed: -12,-5');
+        }
+        try {
+            calculator.add("//|\n-2|-3|5");
+        } catch (e) {
+            assert.strictEqual(e.message, 'Negatives not allowed: -2,-3');
+        }
+    });
 });

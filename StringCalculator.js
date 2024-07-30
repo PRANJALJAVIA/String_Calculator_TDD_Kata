@@ -3,12 +3,13 @@ class StringCalculator {
         if (!numbers) return 0;
 
         let answer = 0;
-        let delimeter = /[\n,]/;
-        let num_array;
+        let delimeter = /[\n,]/; //default delemeter
+        let num_array = [];
+        let negatives = [];
 
         if(numbers[0] == '/' & numbers[1] == '/'){
             let indexOfNewLine = numbers.indexOf('\n');
-            delimeter = numbers.substring(2, indexOfNewLine)
+            delimeter = numbers.substring(2, indexOfNewLine) // we have to change old delemeter with new delemeter
             let temp_str = numbers.substring(indexOfNewLine+1, numbers.length);
             num_array = temp_str.split(delimeter);
         }
@@ -20,11 +21,21 @@ class StringCalculator {
             let temp = parseInt(num_array[i]);
             
             if (!isNaN(temp)) {
-                answer += temp;
+                if(temp < 0){
+                    negatives.push(temp);
+                }
+                else{
+                    answer += temp;
+                }
             }
         }
 
-        return answer;
+        if(negatives.length > 0){
+            throw new Error(`Negatives not allowed: ${negatives}`);
+        }
+        else{
+            return answer;
+        }
     }
 }
 
